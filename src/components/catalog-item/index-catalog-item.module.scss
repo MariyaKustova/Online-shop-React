@@ -1,0 +1,31 @@
+.img {
+    display: block;
+    margin: 0 auto;
+}
+
+.header {
+    color: #323232;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.price {
+    color: #545454;
+    text-align: center;
+}
+
+.favoriteBtn {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 8px;
+    right: 8px; 
+      
+
+    &:focus path,
+    &:hover path {
+        fill: #E97F03;
+    }
+}
