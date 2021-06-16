@@ -2,15 +2,23 @@ import React, { Component } from "react";
 import s from "./index-input.module.scss";
 
 export class InputSearch extends Component {
-    state = {
-        value: ""
+    renderFilteredList = function (evt) {
+        const userRequest = evt.target.value;
+        const filteredArray = this.props.items.filter(item => item.name === userRequest);
+        const listProduct = document.querySelector("#productList");
+        Array.from(listProduct.children).forEach(function (elem) {
+            elem.remove();
+        })
+        filteredArray.forEach(function (product) {
+            this.props.renderListItem(product, listProduct);
+        })
     }
-
-    debounce(callback, delay) {
+    
+    debounce = function ( renderFilteredList ) {
         let timeout;
-        return function () {
-            clearTimeout(timeout);
-            timeout = setTimeout(callback, delay);
+        return function() {
+            clearTimeout( timeout );
+            timeout = setTimeout( renderFilteredList, 2000 );
         }
     }
 

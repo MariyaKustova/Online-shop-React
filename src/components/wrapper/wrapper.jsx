@@ -51,7 +51,7 @@ export class Wrapper extends Component {
             <div className={s.wrapper}>
                 <header className={s.header}>
                     <div className={s.flex}>
-                        <InputSearch></InputSearch>
+                    <InputSearch items={this.state.items} renderListItem={this.renderListItem}></InputSearch>
                         <div className={s.wrapper}>
                             <ButtonProfile></ButtonProfile>
                             <ButtonBusket></ButtonBusket>
