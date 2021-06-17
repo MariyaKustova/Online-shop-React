@@ -1,6 +1,6 @@
-import { Wrapper } from './components/wrapper/wrapper';
+import Wrapper from './components/wrapper/wrapper';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Wrapper></Wrapper>
