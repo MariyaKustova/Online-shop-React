@@ -21,8 +21,6 @@ const PageIndex = () => {
         if (id >= 0) {
             data__getItemById(id)
         }
-        console.log("Привет", params);
-
     }, [id])
 
     if (!data.items) return <div>Loading...</div>
@@ -36,7 +34,7 @@ const PageIndex = () => {
             ) : (
                 <div className={s.catalog}>
                     {data.items.length ? data.items?.map(item => (
-                        <Link to={`/${item.id}`} key={item.id}><CatalogItem item={item} /></Link>
+                        <Link to={`/item/${item.id}`} key={item.id}><CatalogItem item={item} /></Link>
                     )) : <div>Список пуст</div>}
                 </div>
             )

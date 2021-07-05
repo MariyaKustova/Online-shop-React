@@ -4,6 +4,7 @@ import { DataAction, IDataActionTypes } from "./types";
 const initialState = {
     items: null as Array<IItem> | null,
     item: null as IItem | null,
+    dataFilters: null as Array<IItem> | null,
 };
 export type IDataState = typeof initialState;
 
@@ -16,6 +17,8 @@ export const dataReducer = (
             return { ...state, items: action.payload };
         case IDataActionTypes.DATA__SET_ITEM:
             return { ...state, item: action.payload };
+        case IDataActionTypes.DATA__SET_DATA_FILTER:
+            return { ...state, dataFilters: action.payload };
         default:
             return state;
     }

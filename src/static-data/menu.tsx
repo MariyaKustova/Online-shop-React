@@ -14,7 +14,7 @@ export const MENU: Array<IMenu> = [
     {
         id: 1,
         label: "Главная",
-        href: "/:id?",
+        href: "/item/:id?",
         exact: true,
         component: PageIndex
     },

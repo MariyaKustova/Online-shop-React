@@ -3,6 +3,7 @@ import { IItem } from "../../models/item";
 export enum IDataActionTypes {
   DATA__SET_ITEMS = "[DATA] SET_ITEMS",
   DATA__SET_ITEM = "[DATA] SET_ITEM",
+  DATA__SET_DATA_FILTER = "[DATA] SET_DATA_FILTER",
 }
 
 // Типы ActionCreators
@@ -16,7 +17,13 @@ interface SetItemAction {
   payload: IItem | null;
 }
 
+interface SetDataFilterAction {
+  type: IDataActionTypes.DATA__SET_DATA_FILTER;
+  payload: Array<IItem> | null;
+}
+
 // Общий тип Action
 export type DataAction =
   | SetItemssAction
   | SetItemAction
+  | SetDataFilterAction
