@@ -1,3 +1,5 @@
+export const URL = `http://localhost:3006/item/`;
+
 export const substituteCurrency = function (currency) {
     switch (currency) {
         case "USD": return "$";

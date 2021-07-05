@@ -1,18 +1,19 @@
 import React from "react";
 import s from "./index-input.module.scss";
+import { URL } from "../../common";
 
-export const InputSearch = (items) => {
-    const input = document.querySelector("#inputSearch");
-
-    const filteredItems = function () {
-        const userRequest = input.value;
-        const filteredArray = items.items.filter(item => item.name === userRequest);
-        const listProduct = document.querySelector("#productList");
-        while(listProduct.firstChild) {
-            listProduct.removeChild(listProduct.firstChild);
+export const InputSearch = (items, setItems) => {
+    const getFilterData = async (name) => {
+        try {
+            const responsive = await fetch(URL+name);
+            const data = await responsive.json();
+            setItems(data.content);
+            
+        } catch (evt) {
+            console.log("Error", evt)
         }
-        input.value = "";
     }
+    
 
     function debounce(callback, delay) {
         let timeout;
@@ -24,7 +25,7 @@ export const InputSearch = (items) => {
 
     return (
         <label className={s.label}>
-            <input id="inputSearch" className={s.input} type="text" placeholder="Search products" onKeyUp={debounce(filteredItems, 2000)} />
+            <input className={s.input} type="text" placeholder="Search products" onKeyUp={debounce(getFilterData, 2000)} />
             <svg className={s.svg} width="24" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path

@@ -1,0 +1,15 @@
+.button {
+    border: none;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+
+    svg {
+        fill: #323232;
+
+        &:hover,
+        &:focus{
+            fill: #E97F03;
+        }
+    }
+}
