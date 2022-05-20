@@ -1,0 +1,10 @@
+.favoriteBtn {
+    border: none;
+    background-color: transparent;
+      
+
+    &:focus path,
+    &:hover path {
+        fill: #E97F03;
+    }
+}

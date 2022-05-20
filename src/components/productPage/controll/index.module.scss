@@ -1,0 +1,50 @@
+.wrapperInput {
+    box-sizing: border-box;
+    width: 180px;
+    max-height: 40px;
+    display: flex;
+    align-content: center;
+    margin: 0 16px;
+
+    @media (max-width: 852.99px) {
+        margin: 0;
+    }
+}
+
+.input {
+    box-sizing: border-box;
+    width: 100px;
+    height: 40px;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-top: 1px solid #323232;
+    border-bottom: 1px solid #323232;
+
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.btnRemove {
+    border: 1px solid #323232;
+    flex: 0 0 40px;
+
+    &:hover,
+    &:focus{
+        border: 1px solid #E97F03;
+    }
+}
+
+.btnAdd {
+    border: 1px solid #323232;
+    flex: 0 0 40px;
+
+    &:hover,
+    &:focus{
+        border: 1px solid #E97F03;
+    }
+}
