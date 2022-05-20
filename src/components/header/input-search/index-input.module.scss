@@ -1,0 +1,46 @@
+.svg {
+    position: absolute;
+    left: 0;
+    top: 7px;  
+    
+    & path {
+        fill: #323232;
+    }
+
+    &:focus path,
+    &:hover path {
+        fill: #E97F03;
+    }
+}
+
+.label {
+    position: relative;
+}
+
+.input {
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    width: 300px;
+    overflow: hidden;
+    color: #323232;
+    padding: 10.5px 10px 10.5px 32px;
+
+    &:focus{
+        outline: none;
+        border: 2px solid transparent;
+        border-bottom: 2px solid #E97F03;
+    }
+    
+    &:hover {
+        border-bottom: 2px solid #E97F03;
+    }
+    
+    &:focus + .svg path,
+    &:hover + .svg path {
+        fill: #E97F03;
+    }
+
+    @media (max-width: 536.99px) {        
+        width: 200px;        
+    }
+}   
